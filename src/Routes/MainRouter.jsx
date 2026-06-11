@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import AdminLayout from "../Layout/AdminLayout/AdminLayout";
+import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
 import PublicLayout from "../Layout/PublicLayout/PublicLayout";
-import { AdminRoutes } from "./AdminRoutes/AdminRoutes";
+import { DashboardRoutes } from "./DashboardRouts/DashboardRouts";
 import { PublicRoutes } from "./PublicRoutes/PublicRoutes";
 import NotFound from "../Pages/Common/NotFound/Index";
 import ErrorPage from "../Pages/Common/ErrorPage/ErrorPage";
@@ -13,6 +13,10 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: PublicRoutes,
   },
-  { path: "dashboard", element: <AdminLayout />, children: AdminRoutes },
+  {
+    path: "dashboard",
+    element: <DashboardLayout />,
+    children: DashboardRoutes,
+  },
   { path: "*", element: <NotFound /> },
 ]);
